@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="card" >
+          <div class="card-body">
+              {%  if object.photo %}
+                <img class="card-img-top" src="{{ object.photo.url }}" alt="{{ object.title }}">
+              {% endif %}
+              <h1 class="card-title">{{ object.title }}</h1>
+              <p class="card-text">{{ object.author | title }}</p>
+              <a href="{% url 'edit_music' object.pk %}">Tahrirlash</a> |
+              <a href="{% url 'delete_music' object.pk %}">O'chirish</a> |
+              <a href="{% url 'home' %}">Barcha qo'shiqlar</a>
+          </div>
+        </div>
+    </div>
+{% endblock content %}

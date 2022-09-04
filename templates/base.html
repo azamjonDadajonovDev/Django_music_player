@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Django music player{% endblock title %}</title>
+    <style>
+        *{
+            text-decoration: none;
+            color: black;
+        }
+        body{
+            background-color: #767577;
+        }
+        .allmusics{
+            text-align: center;
+            align-items: center;
+        }
+        .container{
+            width:1000px;
+            height:120px;
+            margin-left: 150px;
+            background-color: #dddad5;
+            box-shadow: 7px 7px 15px #292723;
+        }
+        .container .title h3{
+            color: #077960;
+            font-style: italic;
+            font-family: sans-serif;
+        }
+        .container .author h4{
+            color: #077960;
+        }
+        .container .urls a{
+            color: red
+        }
+        #id_title{
+            font-size: 20px;
+        }
+        #id_author{
+            font-size:20px;
+        }
+        #id_image{
+            background-color: green;
+            font-size:20px;
+        }
+        #id_music{
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

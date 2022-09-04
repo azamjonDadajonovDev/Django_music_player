@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Musiqalar{% endblock title %}
+
+{% block content %}
+    <div class="allmusics">
+        {% for musics in object_list %}
+            <a href="{% url 'music_player' musics.pk %}">
+                <div class="container">
+                    <div class="title">
+                        <h3>Qo'shiq nomi: {{ musics.title }}</h3>
+                    </div>
+                    <div class="author">
+                        <h4>Qo'shiq muallifi: {{ musics.author | title }}</h4>
+                    </div>
+                    <div class="urls">
+                        <a href="{% url 'edit_music' musics.pk %}">Tahrirlash</a> |
+                        <a href="{% url 'add_music' %}">Yangi qo'shish</a> |
+                        <a class="delete" href="{% url 'delete_music' musics.pk %}">O'chirib tashlash</a>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
+{% endblock content %}
